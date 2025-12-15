@@ -1,0 +1,153 @@
+/* --- Tổng thể slider --- */
+.slide-item {
+  padding: 20px;
+  transition: all 0.6s ease;
+}
+
+.slide-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  transition: all 0.5s ease-in-out;
+}
+
+/* --- Ảnh cơ bản (chữ nhật ngang) --- */
+.partner-logo {
+  width: 100%;
+  height: 200px; /* 🔹 giữ hình chữ nhật ngang */
+  object-fit: cover;
+  border-radius: 16px;
+  transition: all 0.6s ease;
+  opacity: 0.6;
+  transform: scale(0.9);
+  border: 3px solid transparent;
+  filter: blur(0.8px);
+}
+
+/* --- Ảnh trung tâm (to hơn, rõ hơn) --- */
+.slick-center .partner-logo {
+  height: 240px; /* 🔹 cao hơn để to đều hơn */
+  transform: scale(1.15); /* 🔹 to hơn nhưng vẫn cân đối */
+  opacity: 1;
+  filter: none;
+  border-color: #fbbf24;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  z-index: 5;
+  position: relative;
+}
+
+/* --- Căn giữa nhẹ lên --- */
+.slick-center {
+  transform: translateY(-10px);
+  transition: all 0.4s ease;
+}
+
+/* --- Hiệu ứng hover ảnh giữa --- */
+.slick-center .partner-logo:hover {
+  transform: scale(1.22);
+  box-shadow: 0 25px 80px rgba(251, 191, 36, 0.45);
+  transition: all 0.4s ease-in-out;
+}
+
+/* --- Track căn giữa --- */
+.slick-track {
+  display: flex;
+  align-items: center;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .partner-logo {
+    height: 160px;
+  }
+  .slick-center .partner-logo {
+    height: 200px;
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .partner-logo {
+    height: 140px;
+  }
+  .slick-center .partner-logo {
+    height: 170px;
+    transform: scale(1.05);
+  }
+}
+/* Căn giữa slide */
+.partner-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Kích thước mặc định (hai bên) */
+.partner-image-wrapper {
+  transition: all 0.5s ease;
+  transform: scale(0.8);
+  opacity: 0.5;
+}
+
+/* Khi slide ở giữa */
+.slick-center .partner-image-wrapper {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* Ảnh cơ bản */
+.partner-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e5e7eb;
+}
+
+/* Không còn hover phóng to nữa */
+.partner-image-wrapper:hover {
+  transform: scale(0.8);
+}
+
+
+
+
+.partner-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.partner-image-wrapper {
+  width: 700px;
+  height: 200px;
+}
+
+.partner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Giúp logo co lại hợp lý khi xuống mobile */
+@media (max-width: 1024px) {
+  .partner-image-wrapper {
+    width: 900px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .partner-image-wrapper {
+    width: 650px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-image-wrapper {
+    width: 300px;
+    height: auto;
+  }
+}

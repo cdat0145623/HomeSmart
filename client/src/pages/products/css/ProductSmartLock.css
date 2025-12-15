@@ -1,0 +1,255 @@
+/* ========= BIẾN CHUNG ========= */
+:root {
+    --brand-gold: #b88e2f;
+    --brand-red:  #D72C2C;
+    --text-dark:  #222;
+    --text-dim:   #555;
+    --card-bg:    #fff;
+    --card-border: rgba(0,0,0,.06);
+    --shadow:     0 8px 20px rgba(0,0,0,.06);
+}
+
+.Container-ProductSmartLock {
+    background: #f3f1f1ec;
+
+}
+
+.ProductSmartLock-BannerPage { width: 100%; }
+.ProductSmartLock-BannerPage img {
+    width: 100%;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+}
+
+.ProductSmartLock-Content,
+.ProductSmartLock-cate-wrapper,
+.ProductSmartLock-ListSP {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.ProductSmartLock-Content {
+    background: #fff;              
+    padding: 10px 16px;               
+    border-radius: 8px;              
+    box-shadow: 0 4px 12px rgba(0,0,0,.08); 
+    margin-top: -40px;                
+    position: relative;
+    z-index: 2;                     
+}
+
+.ProductSmartLock-Content .PSL-crumb { 
+    color: var(--text-dark);
+}
+.ProductSmartLock-Content .PSL-crumb-active {
+    color: var(--brand-gold);
+}
+
+.PSL-crumb {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color .2s;
+}
+.PSL-crumb:hover { color: var(--brand-gold); }
+.PSL-crumb-active { color: var(--brand-gold); }
+.PSL-sep { color:#999; font-size:12px; }
+@media (min-width:640px){ .PSL-sep{ font-size:14px; } }
+
+.ProductSmartLock-cate-wrapper {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+.ProductSmartLock-cate {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 16px 0 20px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+}
+.ProductSmartLock-cate::-webkit-scrollbar { height: 6px; }
+.ProductSmartLock-cate::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,.15);
+    border-radius: 999px;
+}
+@supports (scrollbar-width: thin) {
+.ProductSmartLock-cate { scrollbar-width: thin; }
+}
+.PSL-logoItem {
+    flex: 0 0 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+.PSL-logoBox {
+    width: 112px; height: 112px;
+    border: 1px solid var(--card-border);
+    border-radius: 50%;
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color .2s, box-shadow .2s, transform .15s;
+}
+.PSL-logoBox img {
+    max-width: 72%;
+    max-height: 72%;
+    object-fit: contain;
+    display: block;
+}
+.PSL-logoTitle {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--text-dim);
+    white-space: nowrap;
+}
+.PSL-logoItem:hover .PSL-logoBox {
+    border-color: var(--brand-gold);
+    box-shadow: 0 8px 18px rgba(0,0,0,.08);
+    transform: translateY(-1px);
+}
+.PSL-logoItem:hover .PSL-logoTitle { color: var(--brand-gold); }
+
+.ProductSmartLock-ListSP {
+    margin: 20px auto 40px;
+    padding: 20px;
+    background: #fff;             
+    border: 1px solid #ddd;       
+    border-radius: 12px;         
+    box-shadow: 0 4px 12px rgba(0,0,0,.05);     
+}
+
+.ProductSmartLock-ListSP_Title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+    background: rgba(184,142,47,0.08); 
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.ProductSmartLock-ListSP_Title h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--brand-gold);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.ProductSmartLock-ListSP_Title a {
+    color: var(--brand-gold);
+    text-decoration: none;
+    font-weight: 600;
+}
+.ProductSmartLock-ListSP_Title a:hover {
+    text-decoration: underline;
+}
+
+.SLP-card{
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform .2s, box-shadow .2s, border-color .2s;
+    display: flex; flex-direction: column;
+    height: 100%;
+}
+.SLP-card:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.10);
+    border-color: var(--brand-gold);
+}
+
+.SLP-thumb{
+    position: relative;
+    aspect-ratio: 3 / 4;           
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    padding: 10px;
+}
+.SLP-thumb img{
+    width: 100%; height: 100%;
+    object-fit: contain; object-position: center;
+    display: block;
+}
+
+.SLP-info{ padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
+
+.SLP-title{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;  
+    overflow: hidden;
+    font-size: 15px; font-weight: 600; line-height: 1.35;
+    color: var(--text-dark); text-decoration: none;
+}
+.SLP-title:hover{ color: var(--brand-gold); }
+
+.SLP-prices{ display: flex; align-items: center; gap: 8px; margin-top: 2px; }
+.SLP-price{ color: var(--brand-red); font-weight: 700; font-size: 16px; }
+.SLP-price-old{ color: #888; text-decoration: line-through; font-size: 14px; }
+
+.SLP-actions{
+    margin-top: auto;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
+.SLP-compare{
+    padding: 8px 12px;
+    border: 1px solid var(--brand-gold);
+    color: var(--brand-gold);
+    background: #fff;
+    border-radius: 8px;
+    font-weight: 600; cursor: pointer;
+    transition: background-color .2s, color .2s;
+}
+.SLP-compare:hover{ background: var(--brand-gold); color: #fff; }
+.SLP-compare:focus-visible{ outline: 2px dashed var(--brand-gold); outline-offset: 3px; }
+
+.SLP-cart{
+    padding: 8px 12px;
+    background: var(--brand-gold); color:#fff;
+    border: none; border-radius: 8px; font-weight: 700; cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: filter .2s, transform .2s;
+}
+.SLP-cart:hover{ filter: brightness(.95); transform: translateY(-1px); }
+.SLP-cart:focus-visible{ outline: 2px dashed var(--brand-gold); outline-offset: 3px; }
+
+.SLP-moreBtn{
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 8px; background: var(--brand-gold);
+    color: #fff; font-weight: 600; text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0,0,0,.08);
+    transition: background-color .2s, transform .2s, box-shadow .2s;
+}
+.SLP-moreBtn:hover{ transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.12); }
+
+@media (max-width: 639px){
+.ProductSmartLock-BannerPage img { height: 180px; }
+.ProductSmartLock-cate { gap: 16px; padding: 12px 0 6px; }
+.PSL-logoItem { flex-basis: 120px; }
+.PSL-logoBox { width: 88px; height: 88px; }
+.PSL-logoTitle { font-size: 14px; margin-top: 10px; }
+
+.SLP-thumb{ aspect-ratio: 1 / 1; padding: 12px; }
+.SLP-title{ font-size: 14px; }
+.SLP-price{ font-size: 15px; }
+}
+@media (min-width: 640px) and (max-width: 1023px){
+.ProductSmartLock-BannerPage img { height: 240px; }
+.ProductSmartLock-cate { gap: 20px; }
+.PSL-logoItem { flex-basis: 136px; }
+.PSL-logoBox { width: 102px; height: 102px; }
+.PSL-logoTitle { font-size: 15px; }
+
+.SLP-thumb{ aspect-ratio: 4 / 5; }
+}

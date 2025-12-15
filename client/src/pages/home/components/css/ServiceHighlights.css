@@ -1,0 +1,59 @@
+:root {
+--brand-gold: #b88e2f;
+--text-dark: #222222;
+--card-bg: #ffffff;
+--card-border: rgba(0,0,0,0.06);
+--shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+.ServiceHighlights-Content h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--brand-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.Container-ServiceHighlights {
+padding: 20px 0;
+}
+
+.ServiceHighlights-card {
+background: var(--card-bg);
+border: 1px solid var(--card-border);
+border-radius: 12px;
+box-shadow: var(--shadow);
+overflow: hidden;
+transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+text-align: center;
+padding: 16px 12px;
+}
+
+.ServiceHighlights-card:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+border-color: var(--brand-gold);
+}
+
+.ServiceHighlights-card .thumb {
+width: 100%;
+display: flex;
+justify-content: center;
+margin-bottom: 10px;
+}
+
+.ServiceHighlights-card .thumb img {
+max-height: 120px;
+object-fit: contain;
+}
+
+.ServiceHighlights-card .title {
+font-size: 15px;
+font-weight: 600;
+color: var(--text-dark);
+margin-top: 8px;
+}
+.ServiceHighlights-card:hover .title {
+color: var(--brand-gold);
+}

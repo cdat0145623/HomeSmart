@@ -1,0 +1,71 @@
+.Container-IntroducingCompany {
+  font-family: "Inter", sans-serif;
+}
+
+.text-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.text-subheading {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.text-paragraph {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  color: #4b5563;
+}
+
+.highlight {
+  color: #f59e0b; /* vàng NEXAHOME */
+  font-weight: 600;
+}
+
+.IntroducingCompany-image img {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.IntroducingCompany-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .text-heading {
+    font-size: 1.75rem;
+  }
+  .text-subheading {
+    font-size: 1rem;
+  }
+}
+/* Giúp ảnh không bị méo và hiển thị đẹp hơn trên mobile */
+@media (max-width: 768px) {
+  img {
+    border-radius: 1rem;
+    width: 90%;
+    height: auto;
+  }
+
+  .text_top {
+    font-size: 1.6rem;
+  }
+}
+
+/* Nhỏ hơn 480px (mobile nhỏ) */
+@media (max-width: 480px) {
+  section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}

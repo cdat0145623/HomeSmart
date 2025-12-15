@@ -1,0 +1,147 @@
+:root{
+    --brand-gold: #b88e2f;
+    --gold-soft: rgba(184,142,47,0.25);
+    --bg-light: #ffffff;
+    --text-primary: #222222; 
+    --text-muted: #555555;   
+    --brand-red: #D72C2C;
+}
+
+.Container-TopSellingProducts {
+    border: 1.5px solid var(--gold-soft);
+    border-radius: 18px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    background: var(--brand-red); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.TopSellingProducts-Content_Title h2 {
+    color: #ffffff;
+    letter-spacing: .5px;
+}
+
+.TSP-card {
+    border-radius: 16px;
+    background: var(--bg-light);
+    border: 1.5px solid var(--gold-soft);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    transition: transform .2s ease, 
+                box-shadow .2s ease, 
+                border-color .2s ease, 
+                background-color .2s ease;
+    min-height: 84px;
+}
+
+.TSP-link {
+    padding: 16px 18px;
+    width: 100%;
+    text-decoration: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.TSP-icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(184,142,47,0.12);
+    border: 1px solid rgba(184,142,47,0.35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TSP-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.TSP-subtitle {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.TSP-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+    border-color: var(--brand-gold);
+    background: var(--bg-light);
+}
+
+.TSP-card:hover .TSP-title {
+    color: var(--text-primary);
+}
+
+.TSP-card:hover .TSP-subtitle {
+    color: #444444;
+}
+
+.TSP-card.is-emphasis {
+    background: linear-gradient(180deg, #ffd77a 0%, #f8c64f 100%);
+    border-color: rgba(0,0,0,0.12);
+    box-shadow: 0 8px 20px rgba(255,215,122,0.35);
+}
+
+.TSP-card.is-emphasis .TSP-title {
+    color: #2b1b00;
+}
+
+.TSP-card.is-emphasis .TSP-subtitle {
+    color: #3a2a08;
+}
+
+.TSP-card.is-emphasis .TSP-icon {
+    background: rgba(255,255,255,0.9);
+    border-color: rgba(0,0,0,0.12);
+}
+
+.TSP-card.is-emphasis:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.04);
+}
+
+.TSP-link:focus-visible {
+    outline: 2px dashed var(--brand-gold);
+    outline-offset: 3px;
+    border-radius: 14px;
+}
+
+.TSP-more-btn {
+    display: inline-block;
+    border: 1px solid rgb(251, 251, 251);
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.TSP-more-btn:hover {
+    transform: translateY(-2px);
+}
+
+.TSP-more-btn:focus-visible {
+    outline: 2px dashed var(--brand-gold);
+    outline-offset: 3px;
+}
+
+@media (max-width: 1023px) {
+.TSP-icon { width: 48px; height: 48px; }
+}
+
+@media (max-width: 639px) {
+.Container-TopSellingProducts {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 14px;
+}
+.TSP-link { padding: 14px; }
+.TSP-icon { width: 44px; height: 44px; }
+}

@@ -1,0 +1,41 @@
+.Container-PartnerLogos {
+    padding: 40px 20px;
+    background: #fff;
+}
+
+.Section-title {
+    font-size: 1.25rem; 
+    font-weight: 700; 
+    color: var(--text-dark);
+}
+.PartnerLogos-Content h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--brand-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.PartnerLogos-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.PartnerLogos-card:hover {
+transform: translateY(-2px);
+box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+.PartnerLogos-card img {
+    max-height: 80px;
+    object-fit: contain;
+}

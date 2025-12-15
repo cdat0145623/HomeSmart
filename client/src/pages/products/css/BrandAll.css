@@ -1,0 +1,119 @@
+:root {
+--brand-gold: #b88e2f;
+--text-dark: #222;
+--text-dim: #555;
+--border: rgba(0,0,0,0.1);
+--bg-light: #fff;
+}
+
+.BrandAll-Filter {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.BrandAll-row {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.BA-brand {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+.BA-brand .name {
+    color: var(--brand-gold);
+    font-weight: 700;
+}
+
+.BA-fieldset {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    background: #fafafa;
+}
+.BA-legend {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.BA-control {
+    font-size: 14px;
+    color: var(--text-dim);
+    cursor: pointer;
+    user-select: none;
+}
+.BA-control input {
+    accent-color: var(--brand-gold);
+    width: 16px;
+    height: 16px;
+}
+
+.BA-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.BA-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    align-items: center;
+}
+
+.BA-toolbar {
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    margin-top: 16px;
+}
+.BA-sortLabel {
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--text-dark);
+    margin-right: 6px;
+}
+.BA-select {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    background: #fff;
+    cursor: pointer;
+}
+.BA-select:focus {
+    outline: none;
+    border-color: var(--brand-gold);
+}
+
+.BA-btn {
+    background: var(--brand-gold);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.BA-btn:hover {
+    background: #a17924;
+}
+.BA-btn--mini {
+    font-size: 13px;
+    padding: 4px 10px;
+}
+.BA-btn--reset {
+    background: #ddd;
+    color: #333;
+}
+.BA-btn--reset:hover {
+    background: #ccc;
+}
