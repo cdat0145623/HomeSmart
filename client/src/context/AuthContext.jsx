@@ -1,70 +1,51 @@
-import React, {
-    createContext,
-    useContext,
-    useEffect,
-    useMemo,
-    useCallback,
-    useState,
-} from "react";
-import { api } from "../lib/api";
+import { createContext, useContext, useState, useEffect } from "react";
 
-const AuthCtx = createContext(null);
+const AuthContext = createContext();
 
-export function AuthProvider({ children }) {
-const [user, setUser] = useState(null);
-const [authLoading, setAuthLoading] = useState(true);
-const [error, setError] = useState(null);
+export const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-const refresh = useCallback(async () => {
-    setAuthLoading(true);
-    setError(null);
-    try {
-    const res = await api("/auth/me", { method: "GET", withCred: true });
-    setUser(res?.data?.user || res?.user || null);
-    } catch (e) {
-    setUser(null);
-    setError(e);
-    } finally {
-    setAuthLoading(false);
-    }
-}, []);
+    // Khi ứng dụng được khởi động, kiểm tra xem có thông tin người dùng trong localStorage không
+    useEffect(() => {
+        console.log("useEffect of AUTHPROVIDER DC GOI");
 
-const logout = useCallback(async () => {
-    try {
-    await api("/auth/logout", { method: "POST", withCred: true });
-    } catch (e) {
-    console.error("Logout failed:", e);
-    } finally {
-    setUser(null);
-    }
-}, []);
+        const savedUser = localStorage.getItem("user");
+        const storedUser = JSON.parse(localStorage.getItem("user"));
 
-useEffect(() => {
-    refresh();
-}, [refresh]);
+        if (savedUser && storedUser) {
+            setUser(JSON.parse(savedUser));
+            // setToken(JSON.parse(savedToken));
+        }
+        setLoading(false);
+    }, []);
 
-const isAdmin = user?.vai_tro === "admin";
+    const update = (updatedUser) => {
+        const userFromStorage = JSON.parse(localStorage.getItem("user"));
+        const updatedUserInfo = { ...userFromStorage, ...updatedUser };
+        localStorage.setItem("user", JSON.stringify(updatedUserInfo));
+        setUser(updatedUserInfo);
+    };
 
+    // Hàm đăng nhập
+    const login = (userData, token) => {
+        localStorage.setItem("user", JSON.stringify(userData)); // Lưu thông tin người dùng vào localStorage
+        localStorage.setItem("token", token); // Lưu token vào localStorage
+        setUser(userData); // Cập nhật trạng thái người dùng
+    };
 
-const value = useMemo(
-    () => ({
-    user,
-    setUser,
-    authLoading,
-    error,
-    isAdmin,
-    refresh,
-    logout,
-    me: user,
-    loading: authLoading,
-    refetchMe: refresh,
-    }),
-    [user, authLoading, error, isAdmin, refresh, logout]
-);
+    // Hàm đăng xuất
+    const logout = async () => {
+        localStorage.removeItem("user"); // Xóa thông tin người dùng khỏi localStorage
+        localStorage.removeItem("token");
+        setUser(null); // Xóa trạng thái người dùng
+    };
 
-return <AuthCtx.Provider value={value}>{children}</AuthCtx.Provider>;
-}
+    return (
+        <AuthContext.Provider value={{ update, loading, user, login, logout }}>
+            {children}
+        </AuthContext.Provider>
+    );
+};
 
-export function useAuth() {
-return useContext(AuthCtx);
-}
+export const useAuth = () => useContext(AuthContext);

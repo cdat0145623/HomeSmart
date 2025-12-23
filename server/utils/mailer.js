@@ -1,24 +1,13 @@
-const nodemailer = require("nodemailer");
-
-const transporter = nodemailer.createTransport({
-host: process.env.SMTP_HOST,
-port: Number(process.env.SMTP_PORT || 587),
-secure: String(process.env.SMTP_SECURE || "false") === "true",
-auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-},
-});
-transporter.verify()
-  .then(() => console.log("SMTP ready"))
-  .catch(e => console.error("SMTP ERROR:", e.message));
+const transporter = require("../utils/nodeMailer");
 
 async function sendVerifyEmail(to, verifyUrl) {
-const info = await transporter.sendMail({
-    from: `"NexaHome" <${process.env.SMTP_USER}>`,
-    to,
-    subject: "Xác minh email NexaHome",
-    html: `
+    console.log("to:", to);
+    console.log("verify url:", verifyUrl);
+    const info = await transporter.sendMail({
+        from: `"NexaHome" <${process.env.SMTP_USER}>`,
+        to,
+        subject: "Xác minh email NexaHome",
+        html: `
     <div style="font-family:Segoe UI,Arial">
         <h2>Chào bạn,</h2>
         <p>Nhấn nút bên dưới để xác minh email và kích hoạt tài khoản NexaHome.</p>
@@ -29,8 +18,9 @@ const info = await transporter.sendMail({
         <small>Liên kết có hiệu lực 24 giờ.</small>
     </div>
     `,
-});
-return info.messageId;
+    });
+    console.log("info smpt:", info.messageId);
+    return info.messageId;
 }
 
 module.exports = { sendVerifyEmail };

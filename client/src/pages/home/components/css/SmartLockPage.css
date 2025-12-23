@@ -1,87 +1,276 @@
-:root{
-  --brand-gold:#b88e2f; --brand-red:#D72C2C; --text-dark:#222; --text-dim:#555;
-  --card-bg:#fff; --card-border:rgba(0,0,0,.06); --shadow:0 8px 20px rgba(0,0,0,.06);
+:root {
+    --brand-gold: #b88e2f;
+    --brand-red: #d72c2c;
+    --text-dark: #222;
+    --text-dim: #555;
+    --card-bg: #fff;
+    --card-border: rgba(0, 0, 0, 0.06);
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 /* ===== Khung trang ===== */
-.Container-SmartLockPage{
-  border:none;background:#fff;padding:20px;max-width:1200px;margin:30px auto 0;
-  border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.05);
+.Container-SmartLockPage {
+    border: none;
+    background: #fff;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 30px auto 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* ===== Thanh danh mục con ===== */
-.SmartLockPage-Content_Cate{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
-.subject-pill{border:2px solid var(--brand-gold);color:var(--brand-gold);font-weight:700;padding:8px 16px;border-radius:8px;transition:.25s;background:rgba(184,142,47,.08)}
-.subject-pill h2{color:inherit;margin:0;line-height:1.2}
-@media(hover:hover){.subject-pill:hover{background:var(--brand-gold);color:#fff}}
-.SmartLockPage-Content_Cate a{text-decoration:none;color:#333;transition:color .25s,transform .2s;display:block;padding:8px 12px;border-radius:6px}
-.SmartLockPage-Content_Cate a:hover{color:var(--brand-gold)}
-.SmartLockPage-Content_Cate a:focus-visible{outline:2px dashed var(--brand-gold);outline-offset:2px}
-.SmartLockPage-Content_Cate h2{margin:0;line-height:1.25}
-.divider{color:#999;font-size:18px;padding:0 4px;user-select:none;display:flex;align-items:center;opacity:.9;transition:color .25s}
-.SmartLockPage-Content_Cate a:hover + .divider,.divider:hover{color:var(--brand-gold)}
-@media(max-width:639px){.SmartLockPage-Content_Cate{gap:6px 10px}.divider{display:none}.SmartLockPage-Content_Cate h2{font-size:14px}.subject-pill{padding:6px 12px}.SmartLockPage-Content_Cate a{padding:6px 10px}}
-@media(min-width:640px) and (max-width:1023px){.SmartLockPage-Content_Cate h2{font-size:16px}.divider{display:flex}}
-@media(min-width:1024px){.SmartLockPage-Content_Cate h2{font-size:18px}}
+.SmartLockPage-Content_Cate {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+}
+.subject-pill {
+    border: 2px solid var(--brand-gold);
+    color: var(--brand-gold);
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: 0.25s;
+    background: rgba(184, 142, 47, 0.08);
+}
+.subject-pill h2 {
+    color: inherit;
+    margin: 0;
+    line-height: 1.2;
+}
+@media (hover: hover) {
+    .subject-pill:hover {
+        background: var(--brand-gold);
+        color: #fff;
+    }
+}
+.SmartLockPage-Content_Cate a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.25s, transform 0.2s;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+.SmartLockPage-Content_Cate a:hover {
+    color: var(--brand-gold);
+}
+.SmartLockPage-Content_Cate a:focus-visible {
+    outline: 2px dashed var(--brand-gold);
+    outline-offset: 2px;
+}
+.SmartLockPage-Content_Cate h2 {
+    margin: 0;
+    line-height: 1.25;
+}
+.divider {
+    color: #999;
+    font-size: 18px;
+    padding: 0 4px;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    opacity: 0.9;
+    transition: color 0.25s;
+}
+.SmartLockPage-Content_Cate a:hover + .divider,
+.divider:hover {
+    color: var(--brand-gold);
+}
+@media (max-width: 639px) {
+    .SmartLockPage-Content_Cate {
+        gap: 6px 10px;
+    }
+    .divider {
+        display: none;
+    }
+    .SmartLockPage-Content_Cate h2 {
+        font-size: 14px;
+    }
+    .subject-pill {
+        padding: 6px 12px;
+    }
+    .SmartLockPage-Content_Cate a {
+        padding: 6px 10px;
+    }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+    .SmartLockPage-Content_Cate h2 {
+        font-size: 16px;
+    }
+    .divider {
+        display: flex;
+    }
+}
+@media (min-width: 1024px) {
+    .SmartLockPage-Content_Cate h2 {
+        font-size: 18px;
+    }
+}
 
 /* ===== Card sản phẩm ===== */
-.SLP-card{
-  background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;
-  box-shadow:var(--shadow);overflow:hidden;transition:transform .2s, box-shadow .2s, border-color .2s;
-  display:flex;flex-direction:column;height:100%;
+.SLP-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
-.SLP-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.1);border-color:var(--brand-gold)}
+.SLP-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    border-color: var(--brand-gold);
+}
 
-.SLP-thumb{
-  position:relative;aspect-ratio:3/4; /* desktop/tabet dọc */
-  background:#fff;display:flex;align-items:center;justify-content:center;padding:10px;
+.SLP-thumb {
+    position: relative;
+    aspect-ratio: 3/4; /* desktop/tabet dọc */
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
-.SLP-thumb img{
-  width:100%;height:100%;object-fit:contain;object-position:center;display:block;
+.SLP-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
 }
 
-.SLP-info{padding:12px 14px;display:flex;flex-direction:column;gap:8px}
-
-.SLP-title{
-  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;
-  font-size:15px;font-weight:600;line-height:1.35;color:var(--text-dark);text-decoration:none;
+.SLP-info {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
-.SLP-title:hover{color:var(--brand-gold)}
+
+.SLP-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--text-dark);
+    text-decoration: none;
+}
+.SLP-title:hover {
+    color: var(--brand-gold);
+}
 
 /* Giá */
-.SLP-prices{display:flex;align-items:center;gap:8px;margin-top:2px}
-.SLP-price-old{color:#888;text-decoration:line-through;font-size:14px}
-.SLP-price{color:var(--brand-red);font-weight:700;font-size:16px}
+.SLP-prices {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 2px;
+}
+.SLP-price-old {
+    color: #888;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+.SLP-price {
+    color: var(--brand-red);
+    font-weight: 700;
+    font-size: 16px;
+}
 
 /* Hành động */
-.SLP-actions{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
-.SLP-compare{
-  padding:8px 12px;border:1px solid var(--brand-gold);color:var(--brand-gold);background:#fff;border-radius:8px;
-  font-weight:600;cursor:pointer;transition:background-color .2s,color .2s
+.SLP-actions {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
 }
-.SLP-compare:hover{background:var(--brand-gold);color:#fff}
-.SLP-compare:focus-visible{outline:2px dashed var(--brand-gold);outline-offset:3px}
-.SLP-cart{
-  padding:8px 12px;background:var(--brand-gold);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;
-  display:inline-flex;align-items:center;justify-content:center;transition:filter .2s, transform .2s
+.SLP-compare {
+    padding: 8px 12px;
+    border: 1px solid var(--brand-gold);
+    color: var(--brand-gold);
+    background: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
 }
-.SLP-cart:hover{filter:brightness(.95);transform:translateY(-1px)}
-.SLP-cart:focus-visible{outline:2px dashed var(--brand-gold);outline-offset:3px}
+.SLP-compare:hover {
+    background: var(--brand-gold);
+    color: #fff;
+}
+.SLP-compare:focus-visible {
+    outline: 2px dashed var(--brand-gold);
+    outline-offset: 3px;
+}
+.SLP-cart {
+    padding: 8px 12px;
+    background: var(--brand-gold);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 0.2s, transform 0.2s;
+}
+.SLP-cart:hover {
+    filter: brightness(0.95);
+    transform: translateY(-1px);
+}
+.SLP-cart:focus-visible {
+    outline: 2px dashed var(--brand-gold);
+    outline-offset: 3px;
+}
 
-.SLP-moreBtn{
-  display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:8px;background:var(--brand-gold);
-  color:#fff;font-weight:600;text-decoration:none;box-shadow:0 6px 16px rgba(0,0,0,.08);transition:background-color .2s, transform .2s, box-shadow .2s
+.SLP-moreBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: var(--brand-gold);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-.SLP-moreBtn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.12)}
-.SLP-moreBtn:focus-visible{outline:2px dashed var(--brand-gold);outline-offset:3px}
+.SLP-moreBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+.SLP-moreBtn:focus-visible {
+    outline: 2px dashed var(--brand-gold);
+    outline-offset: 3px;
+}
 
 /* ===== Responsive ===== */
-@media(max-width:639px){
-  .SLP-thumb{aspect-ratio:1/1;padding:12px}
-  .SLP-title{font-size:14px}
-  .SLP-price{font-size:15px}
+@media (max-width: 639px) {
+    .SLP-thumb {
+        aspect-ratio: 1/1;
+        padding: 12px;
+    }
+    .SLP-title {
+        font-size: 14px;
+    }
+    .SLP-price {
+        font-size: 15px;
+    }
 }
 
-@media(min-width:640px) and (max-width:1023px){
-  .SLP-thumb{aspect-ratio:4/5}
+@media (min-width: 640px) and (max-width: 1023px) {
+    .SLP-thumb {
+        aspect-ratio: 4/5;
+    }
 }

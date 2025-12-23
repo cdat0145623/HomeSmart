@@ -12,20 +12,22 @@ const JWT_SECRET = process.env.JWT_SECRET || "dev_secret";
 // if (!token) { req.user = null; return next(); }
 
 // try {
-//     req.user = jwt.verify(token, JWT_SECRET); 
+//     req.user = jwt.verify(token, JWT_SECRET);
 // } catch {
 //     req.user = null;
 // }
 // next();
 // };
 module.exports = function auth(req, res, next) {
+    // console.log("req", req.body);
     const bearer = req.headers.authorization?.split(" ");
-    const cookieToken = req.cookies?.token;
+    const cookieToken = req.body?.token || req?.cookies?.token;
+    // console.log("tooken auth:", req?.cookies?.token);
 
     let token = null;
 
     if (bearer && bearer[0] === "Bearer") token = bearer[1];
-    if (!token && cookieToken) token = cookieToken;
+    if (!token) token = cookieToken;
 
     if (!token) {
         return res.status(401).json({ message: "Bạn chưa đăng nhập!" });
@@ -33,8 +35,12 @@ module.exports = function auth(req, res, next) {
 
     try {
         req.user = jwt.verify(token, JWT_SECRET);
+        req.user.token = token;
+
         next();
     } catch {
-        return res.status(401).json({ message: "Token hết hạn hoặc không hợp lệ" });
+        return res
+            .status(401)
+            .json({ message: "Token hết hạn hoặc không hợp lệ" });
     }
 };

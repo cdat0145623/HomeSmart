@@ -1,487 +1,656 @@
-.Container-News {
-  background-color: #fff;
-  font-family: "Inter", sans-serif;
-  color: #333;
+.breadcrumb span {
+    cursor: pointer;
+    transition: 0.2s;
 }
-.new-contai{
-  background-color: #ffffff;
-  max-width: 1200px;
-  margin: 30px auto 0;
-  border-radius: 12px;
-  box-shadow: 0 9px 15px rgba(0, 0, 0, 0.1);
+
+.breadcrumb span:hover {
+    color: #c29b2b;
+}
+
+.breadcrumb .separator {
+    color: #a88a43;
+    cursor: default !important;
+}
+
+.breadcrumb .current {
+    font-weight: bold;
+    color: #c29b2b;
+    cursor: default !important;
+}
+
+.pd-container .breadcrumb {
+    grid-column: 1 / -1; /* chiếm toàn bộ cột grid */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    margin: 0 0 18px 0; /* cách dưới 18px */
+    color: #8a6d1f;
+}
+.pd-container .breadcrumb .crumb-link {
+    cursor: pointer;
+    color: #8a6d1f;
+    transition: color 0.15s;
+}
+.pd-container .breadcrumb .crumb-link:hover {
+    color: #c29b2b;
+}
+
+/* phân cách */
+.pd-container .breadcrumb .separator {
+    color: #a88a43;
+    cursor: default;
+}
+
+/* tên hiện tại (không click) */
+.pd-container .breadcrumb .current {
+    font-weight: 700;
+    color: #c29b2b;
+    cursor: default;
+}
+
+.Container-News {
+    background-color: #fff;
+    font-family: "Inter", sans-serif;
+    color: #333;
+}
+.new-contai {
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 30px auto 0;
+    border-radius: 12px;
+    box-shadow: 0 9px 15px rgba(0, 0, 0, 0.1);
 }
 .News-Content {
-  display: grid;
-  
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 40px;
-  
+    display: grid;
+
+    /* grid-template-columns: 2fr 1fr;
+  gap: 40px; */
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 50px;
 }
 
 .News-Main h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-  color: #222;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #222;
 }
 
 .News-Grid {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .News-Card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
 }
 .News-Card:hover {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  border-color: #f5b300;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    border-color: #f5b300;
 }
 
 .News-Image img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
 }
 
 .News-Body {
-  padding: 20px;
+    padding: 20px;
 }
 
 .News-Body h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 .News-Body h2 a {
-  color: #222;
-  text-decoration: none;
+    color: #222;
+    text-decoration: none;
 }
 .News-Body h2 a:hover {
-  color: #f5b300;
+    color: #f5b300;
 }
 
 .News-Meta {
-  display: flex;
-  gap: 16px;
-  font-size: 0.9rem;
-  color: #888;
-  margin-bottom: 10px;
+    display: flex;
+    gap: 16px;
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 10px;
 }
 
 .News-ReadMore {
-  display: inline-block;
-  margin-top: 10px;
-  color: #f5b300;
-  font-weight: 600;
-  text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    color: #f5b300;
+    font-weight: 600;
+    text-decoration: none;
 }
 .News-ReadMore:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* Sidebar */
 .News-Sidebar .Sidebar-Box {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 24px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 24px;
 }
 .Sidebar-Box h3 {
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #222;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #222;
 }
 .Sidebar-Box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 .Sidebar-Box li {
-  margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 .Sidebar-Box a {
-  text-decoration: none;
-  color: #555;
+    text-decoration: none;
+    color: #555;
 }
 .Sidebar-Box a:hover {
-  color: #f5b300;
+    color: #f5b300;
 }
 .Sidebar-Box form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .Sidebar-Box input {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
 }
 .Sidebar-Box button {
-  background-color: #f5b300;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
+    background-color: #f5b300;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 .Sidebar-Box button:hover {
-  background-color: #d99e00;
+    background-color: #d99e00;
 }
 
 /* CTA Section */
 /* Phần CTA cuối trang */
 .Contact-CTA {
-  position: relative;
-  background: url("/news/bg-smartlock.jpg") center/cover no-repeat; 
-  background-color: hsl(34, 100%, 53%);
-  color: #fff;
-  padding: 60px 20px;
-  text-align: center;
-  overflow: hidden;
+    position: relative;
+    background: url("/news/bg-smartlock.jpg") center/cover no-repeat;
+    background-color: hsl(34, 100%, 53%);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    overflow: hidden;
 }
 
 /* Lớp phủ mờ để làm tối nền */
 .Contact-CTA::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* làm tối 60% */
-  z-index: 0;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* làm tối 60% */
+    z-index: 0;
 }
 
 /* Nội dung nổi lên trên lớp phủ */
 .CTA-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 700px;
-  margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .CTA-inner h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .CTA-inner p {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  opacity: 0.9;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
 }
 
 .CTA-btn {
-  display: inline-block;
-  background: #f59e0b;
-  color: #111;
-  font-weight: 600;
-  padding: 12px 30px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+    display: inline-block;
+    background: #f59e0b;
+    color: #111;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .CTA-btn:hover {
-  background: #fff;
-  color: #000;
+    background: #fff;
+    color: #000;
 }
 
 /* Giữ nguyên layout chính nhưng mượt hơn khi thu nhỏ */
 
 .ProductSmartLock-BannerPage img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 /* Điều chỉnh khoảng cách tổng thể */
 .new-contai {
-  /* padding-top: 2rem; */
-  padding-bottom: 4rem;
+    /* padding-top: 2rem; */
+    padding-bottom: 4rem;
 }
 
 /* News card hover */
 .News-Card:hover img {
-  transform: scale(1.03);
+    transform: scale(1.03);
 }
 .News-Image img {
-  transition: transform 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 /* Sidebar xuống dưới khi mobile */
 @media (max-width: 1024px) {
-  .News-Content {
-    grid-template-columns: 1fr;
-  }
-  .News-Sidebar {
-    margin-top: 3rem;
-  }
+    .News-Content {
+        grid-template-columns: 1fr;
+    }
+    .News-Sidebar {
+        margin-top: 3rem;
+    }
+    .ProductSmartLock-Content {
+        margin: 0px 30px;
+    }
 }
 
 /* Padding nhỏ hơn khi mobile */
 @media (max-width: 640px) {
-  .new-contai {
-    padding: 1rem;
-  }
-  .News-Card .News-Body {
-    padding: 1rem;
-  }
+    .new-contai {
+        padding: 1rem;
+    }
+    .News-Card .News-Body {
+        padding: 1rem;
+    }
+    .ProductSmartLock-Content {
+        margin: 0px 10px;
+    }
 }
 /* ========== Responsive Layouts ========== */
 
 /* Tablet (max-width: 1024px) */
 @media (max-width: 1024px) {
-  .News-Grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
+    .News-Grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
 
-  .News-Card h2 {
-    font-size: 1.1rem;
-  }
+    .News-Card h2 {
+        font-size: 1.1rem;
+    }
 
-  .News-Card p {
-    font-size: 0.95rem;
-  }
+    .News-Card p {
+        font-size: 0.95rem;
+    }
 
-  .News-Meta {
-    font-size: 0.85rem;
-  }
+    .News-Meta {
+        font-size: 0.85rem;
+    }
 
-  .News-Sidebar {
-    padding-left: 1rem;
-  }
+    .News-Sidebar {
+        padding-left: 1rem;
+    }
 
-  .Sidebar-Box h3 {
-    font-size: 1.1rem;
-  }
+    .Sidebar-Box h3 {
+        font-size: 1.1rem;
+    }
 
-  .Sidebar-Box p,
-  .Sidebar-Box li a {
-    font-size: 0.95rem;
-  }
+    .Sidebar-Box p,
+    .Sidebar-Box li a {
+        font-size: 0.95rem;
+    }
 
-  .CTA-inner h3 {
-    font-size: 1.4rem;
-  }
+    .CTA-inner h3 {
+        font-size: 1.4rem;
+    }
 
-  .CTA-inner p {
-    font-size: 1rem;
-  }
+    .CTA-inner p {
+        font-size: 1rem;
+    }
 
-  .CTA-btn {
-    font-size: 0.95rem;
-  }
+    .CTA-btn {
+        font-size: 0.95rem;
+    }
+    .ProductSmartLock-Content {
+        margin: 0px 10px;
+    }
 }
 
 /* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
-  .News-Content {
-    display: flex;
-    flex-direction: column;
-  }
+    .News-Content {
+        display: flex;
+        flex-direction: column;
+    }
 
-  .News-Grid {
-    grid-template-columns: 1fr;
-  }
+    .ProductSmartLock-Content {
+        margin: 0px 20px;
+    }
 
-  .News-Sidebar {
-    margin-top: 2rem;
-    padding-left: 0;
-  }
+    .News-Grid {
+        grid-template-columns: 1fr;
+    }
 
-  .News-Card h2 {
-    font-size: 1rem;
-  }
+    .News-Sidebar {
+        margin-top: 2rem;
+        padding-left: 0;
+    }
 
-  .News-Card p {
-    font-size: 0.9rem;
-  }
+    .News-Card h2 {
+        font-size: 1rem;
+    }
 
-  .News-Meta {
-    font-size: 0.8rem;
-    flex-wrap: wrap;
-  }
+    .News-Card p {
+        font-size: 0.9rem;
+    }
 
-  .Sidebar-Box h3 {
-    font-size: 1rem;
-  }
+    .News-Meta {
+        font-size: 0.8rem;
+        flex-wrap: wrap;
+    }
 
-  .Sidebar-Box p,
-  .Sidebar-Box li a {
-    font-size: 0.9rem;
-  }
+    .Sidebar-Box h3 {
+        font-size: 1rem;
+    }
 
-  .Contact-CTA {
-    padding: 2rem 1rem;
-  }
+    .Sidebar-Box p,
+    .Sidebar-Box li a {
+        font-size: 0.9rem;
+    }
 
-  .CTA-inner h3 {
-    font-size: 1.25rem;
-  }
+    .Contact-CTA {
+        padding: 2rem 1rem;
+    }
 
-  .CTA-inner p {
-    font-size: 0.95rem;
-  }
+    .CTA-inner h3 {
+        font-size: 1.25rem;
+    }
 
-  .CTA-btn {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
-  }
+    .CTA-inner p {
+        font-size: 0.95rem;
+    }
 
-  .ProductSmartLock-BannerPage img {
-    height: auto;
-    object-fit: cover;
-  }
+    .CTA-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
 
-  nav.flex {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    .ProductSmartLock-BannerPage img {
+        height: auto;
+        object-fit: cover;
+    }
 
-  nav.flex span {
-    font-size: 0.9rem;
-  }
+    nav.flex {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav.flex span {
+        font-size: 0.9rem;
+    }
 }
 
 /* Small mobile (max-width: 480px) */
 @media (max-width: 480px) {
-  
-  .News-Card {
-    margin-bottom: 1.5rem;
-    border-radius: 10px;
-  }
+    .News-Card {
+        margin-bottom: 1.5rem;
+        border-radius: 10px;
+    }
 
-  .News-Card h2 {
-    font-size: 0.95rem;
-    line-height: 1.3;
-  }
+    .News-Card h2 {
+        font-size: 0.95rem;
+        line-height: 1.3;
+    }
 
-  .News-Card p {
-    font-size: 0.85rem;
-    line-height: 1.4;
-  }
+    .News-Card p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
 
-  .News-Meta {
-    font-size: 0.75rem;
-    gap: 6px;
-  }
+    .News-Meta {
+        font-size: 0.75rem;
+        gap: 6px;
+    }
 
-  .Sidebar-Box h3 {
-    font-size: 0.95rem;
-  }
+    .Sidebar-Box h3 {
+        font-size: 0.95rem;
+    }
 
-  .Sidebar-Box p,
-  .Sidebar-Box li a {
-    font-size: 0.85rem;
-  }
+    .Sidebar-Box p,
+    .Sidebar-Box li a {
+        font-size: 0.85rem;
+    }
 
-  .Sidebar-Box form input {
-    font-size: 0.85rem;
-    padding: 0.5rem;
-  }
+    .Sidebar-Box form input {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
 
-  .Sidebar-Box form button {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.8rem;
-  }
+    .Sidebar-Box form button {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.8rem;
+    }
 
-  .CTA-inner {
-    text-align: center;
-    padding: 1.5rem 1rem;
-  }
+    .CTA-inner {
+        text-align: center;
+        padding: 1.5rem 1rem;
+    }
 
-  .CTA-inner h3 {
-    font-size: 1rem;
-  }
+    .CTA-inner h3 {
+        font-size: 1rem;
+    }
 
-  .CTA-inner p {
-    font-size: 0.85rem;
-  }
+    .CTA-inner p {
+        font-size: 0.85rem;
+    }
 
-  .CTA-btn {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
-    display: inline-block;
-    margin-top: 0.8rem;
-  }
+    .CTA-btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+        display: inline-block;
+        margin-top: 0.8rem;
+    }
 
-  .ProductSmartLock-BannerPage img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-  }
+    .ProductSmartLock-BannerPage img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
 
-  nav.flex {
-    flex-direction: column;
-    gap: 0.25rem;
-    align-items: center;
-  }
+    nav.flex {
+        /* flex-direction: column; */
+        gap: 0.25rem;
+        align-items: center;
+    }
 
-  nav.flex span {
-    font-size: 0.85rem;
-  }
+    nav.flex span {
+        font-size: 0.85rem;
+    }
 
-  .News-Main h1 {
-    font-size: 1.25rem;
-  }
+    .News-Main h1 {
+        font-size: 1.25rem;
+    }
+
+    .ProductSmartLock-Content {
+        margin: 0px 10px;
+    }
 }
 /* ---------------- Pagination ---------------- */
 .Pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin: 30px 0;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 30px 0;
+    flex-wrap: wrap;
 }
 
 .Pagination button {
-  padding: 8px 14px;
-  font-size: 15px;
-  border: 1px solid #d6d6d6;
-  background: white;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: 0.25s ease;
+    padding: 8px 14px;
+    font-size: 15px;
+    border: 1px solid #d6d6d6;
+    background: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.25s ease;
 }
 
 .Pagination button:hover:not(:disabled) {
-  background:  #f59e0b;
-  color: white;
-  border-color: #f59e0b;
+    background: #f59e0b;
+    color: white;
+    border-color: #f59e0b;
 }
 
 .Pagination button.active {
-  background:  #f59e0b;
-  color: white;
-  font-weight: bold;
-  border-color: #f59e0b;
+    background: #f59e0b;
+    color: white;
+    font-weight: bold;
+    border-color: #f59e0b;
 }
 
 .Pagination button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 /* Mobile responsive */
 @media (max-width: 600px) {
-  .Pagination button {
-    padding: 6px 10px;
-    font-size: 13px;
-  }
+    .Pagination button {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
 }
 
-  
+/* ===== FEATURED POST ===== */
+.News-Featured {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* .News-Featured:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border-color: #f5b300;
+} */
+.News-Featured.modern:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgb(147 68 0 / 23%);
+    border-color: #f5b300;
+}
+
+.Featured-Image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Featured-Body {
+    padding: 32px;
+}
+
+.Featured-Category {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    background: #ebac25;
+    padding: 4px 12px;
+    border-radius: 999px;
+}
+
+.Featured-Body h2 {
+    font-size: 28px;
+    margin-bottom: 14px;
+}
+
+.Featured-Body p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.Featured-ReadMore {
+    display: inline-block;
+    margin-top: 16px;
+    font-weight: 600;
+    color: #fcb32b;
+}
+
+/* ===== GRID MODERN ===== */
+.News-Grid.modern {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.News-Card.modern {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.News-Card.modern:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.News-Card.modern .News-Image img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.News-Card.modern .News-Body {
+    padding: 20px;
+}
+
+.News-Card.modern h2 {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .News-Featured {
+        grid-template-columns: 1fr;
+    }
+
+    .Featured-Body h2 {
+        font-size: 22px;
+    }
+}

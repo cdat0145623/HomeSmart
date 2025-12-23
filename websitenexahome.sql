@@ -58,7 +58,7 @@ CREATE TABLE `bien_the` (
   `trang_thai` enum('hien','an') NOT NULL DEFAULT 'hien',
   `la_mac_dinh` tinyint(1) NOT NULL DEFAULT 0,
   `ngay_tao` datetime NOT NULL DEFAULT current_timestamp(),
-  `ngay_cap_nhat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `ngay_cap_nhat` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
 ) ;
 
 -- --------------------------------------------------------

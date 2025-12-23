@@ -1,0 +1,25 @@
+/* progress::-webkit-progress-bar {
+    background-color: #e5e7eb; 
+    border-radius: 9999px;
+} */
+.progress-warning::-webkit-progress-value {
+    background-color: #f59e0b; /* yellow-500 */
+    border: #f59e0b;
+    border-right-color: #f59e0b;
+    border-radius: 16px;
+}
+
+progress {
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #e5e7eb;
+    border-radius: 9999px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #3b82f6;
+    border-radius: 9999px;
+}
